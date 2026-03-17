@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مبادرة نواة – Nawa Initiative</title>
+    <meta name="description" content="مبادرة نواة – تمكين الأفراد لبناء مصدر دخل مستدام عن طريق دعم المشاريع الصغيرة">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2E7D32', // Deep green
+                        primaryDark: '#1b5e20',
+                        primaryLight: '#4caf50',
+                        accent: '#FFB300', // Amber
+                        accentHover: '#ffa000',
+                        bgBase: '#F5F5F5',
+                    },
+                    fontFamily: {
+                        sans: ['Tajawal', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- FontAwesome icons (using CDN for prototype) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-bgBase text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Header Navigation -->
+    <header class="fixed w-full top-0 z-50 glass transition-all-300">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 decoration-transparent group">
+                    <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition-all-300">
+                        <i class="fa-solid fa-leaf text-xl text-accent"></i>
+                    </div>
+                    <span class="text-2xl font-bold font-sans text-primary whitespace-nowrap">مبادرة نواة</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 font-medium">
+                    <a href="index.html" class="nav-link text-gray-600 hover:text-primary transition-colors">الرئيسية</a>
+                    <a href="about.html" class="nav-link text-gray-600 hover:text-primary transition-colors">عن المبادرة</a>
+                    <a href="index.html#how-it-works" class="nav-link text-gray-600 hover:text-primary transition-colors">كيف تعمل</a>
+                    <a href="donate.html" class="nav-link text-gray-600 hover:text-primary transition-colors">تبرع</a>
+                    <a href="register.html" class="bg-primary hover:bg-primaryDark text-white px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all-300 transform hover:-translate-y-0.5">التسجيل</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-800 focus:outline-none p-2 rounded-lg hover:bg-gray-100">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full left-0">
+            <div class="flex flex-col px-4 pt-2 pb-6 gap-4">
+                <a href="index.html" class="nav-link p-3 rounded-lg hover:bg-gray-50 text-gray-800 transition-colors">الرئيسية</a>
+                <a href="about.html" class="nav-link p-3 rounded-lg hover:bg-gray-50 text-gray-800 transition-colors">عن المبادرة</a>
+                <a href="index.html#how-it-works" class="nav-link p-3 rounded-lg hover:bg-gray-50 text-gray-800 transition-colors">كيف تعمل</a>
+                <a href="donate.html" class="nav-link p-3 rounded-lg hover:bg-gray-50 text-gray-800 transition-colors">تبرع</a>
+                <a href="register.html" class="bg-primary hover:bg-primaryDark text-white p-3 rounded-lg text-center font-medium shadow-md mt-2">التسجيل في المبادرة</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-20">
+        
+        <!-- Hero Section -->
+        <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 w-full h-full z-0">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1600" alt="صاحب مشروع صغير يعمل" class="w-full h-full object-cover object-center" />
+                <div class="absolute inset-0 hero-gradient"></div>
+            </div>
+
+            <!-- Animated Shapes overlay -->
+            <div class="absolute inset-0 overflow-hidden z-0 opacity-20 pointer-events-none">
+                <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-accent blur-3xl"></div>
+                <div class="absolute bottom-10 -right-20 w-80 h-80 rounded-full bg-primaryLight blur-3xl"></div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="container relative z-10 mx-auto px-4 md:px-8 text-center text-white pb-10">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-sm font-medium mb-6 animate-float" style="animation-duration: 3s;">
+                    <i class="fa-solid fa-seedling text-accent ml-2"></i> مبادرة مجتمعية لبناء المستقبل
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg">
+                    مبادرة نواة – Nawa Initiative
+                </h1>
+                
+                <p class="text-xl md:text-2xl font-medium text-gray-100 mb-8 max-w-3xl mx-auto drop-shadow-md">
+                    تمكين الأفراد لبناء مصدر دخل مستدام
+                </p>
+                
+                <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                    ندعم أصحاب الطموح والمهارات لتحويل أفكارهم إلى مشاريع إنتاجية صغيرة، لننتقل معاً من ثقافة الاعتماد على المساعدات إلى التمكين والاعتماد على الذات.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="register.html" class="w-full sm:w-auto px-8 py-4 bg-accent hover:bg-accentHover text-gray-900 font-bold rounded-full shadow-xl hover:shadow-accent/50 transition-all-300 transform hover:-translate-y-1 text-lg flex items-center justify-center gap-2">
+                        سجل في المبادرة <i class="fa-solid fa-arrow-left mt-1"></i>
+                    </a>
+                    <a href="#about" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full backdrop-blur-md border border-white/30 transition-all-300 text-lg">
+                        تعرف على المبادرة
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 text-white/70 animate-bounce">
+                <a href="#about">
+                    <i class="fa-solid fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-bgBase relative">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex flex-col lg:flex-row gap-16 items-center">
+                    <!-- Image -->
+                    <div class="w-full lg:w-1/2 reveal">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl p-2 bg-white transform -rotate-2">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80&w=800" alt="حرفي يعمل في مشروعه" class="w-full h-auto rounded-xl" />
+                            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-accent rounded-full -z-10 blur-xl opacity-50"></div>
+                            <div class="absolute -top-6 -left-6 w-32 h-32 bg-primary rounded-full -z-10 blur-xl opacity-30"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Text -->
+                    <div class="w-full lg:w-1/2 reveal">
+                        <div class="flex items-center gap-3 mb-4 text-primary font-bold">
+                            <i class="fa-solid fa-circle-info border border-primary p-1.5 rounded-full"></i>
+                            <span class="tracking-wide">ما هي نواة؟</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">من فكرة بسيطة إلى مشروع مستدام</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            مبادرة نواة هي مشروع اجتماعي هدفه الرئيسي استبدال المساعدات المالية المؤقتة بدعم حقيقي وتأسيس مشاريع متناهية الصغر. الإغاثة تسد الجوع يوماً، ولكن المشروع البسيط يضمن الكرامة ويسد الحاجة مدى الحياة.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                            نحن نعمل كجسر بين الشباب وأرباب الأسر من ذوي الدخل المحدود الذين يمتلكون المهارة أو الحافز للعمل، وبين الداعمين الذين يرغبون في توجيه تبرعاتهم لصدقة جارية ذات أثر تنموي واضح.
+                        </p>
+                        <a href="about.html" class="inline-flex items-center gap-2 text-primary hover:text-primaryDark font-bold text-lg group">
+                            اقرأ المزيد عنا <i class="fa-solid fa-arrow-left-long group-hover:-translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goals Section -->
+        <section class="py-24 bg-white relative">
+            <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#2E7D32 1px, transparent 1px); background-size: 30px 30px;"></div>
+            
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                    <span class="text-accent font-bold text-lg mb-2 block">رؤيتنا وأهدافنا</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">ما نسعى لتحقيقه</h2>
+                    <p class="text-gray-600 text-lg">من خلال "نواة" نطمح لخلق أثر اجتماعي واقتصادي في المجتمع.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Goal 1 -->
+                    <div class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 reveal group">
+                        <div class="w-16 h-16 bg-green-50 text-primary rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">مساعدة الشباب العاطلين</h3>
+                        <p class="text-gray-600">توفير الدعم المادي والمعرفي لتمكين الشباب من بدء مشاريعهم الخاصة وتقليل معدلات البطالة.</p>
+                    </div>
+
+                    <!-- Goal 2 -->
+                    <div class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 reveal group" style="transition-delay: 100ms;">
+                        <div class="w-16 h-16 bg-amber-50 text-accent rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                            <i class="fa-solid fa-house-chimney-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">دعم الأسر محدودة الدخل</h3>
+                        <p class="text-gray-600">مساعدة أرباب الأسر وأمهات الأيتام في توفير مصدر دخل كريم يضمن استقرار أسرهم وحفظ كرامتهم.</p>
+                    </div>
+
+                    <!-- Goal 3 -->
+                    <div class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 reveal group" style="transition-delay: 200ms;">
+                        <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                            <i class="fa-solid fa-hammer"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">تمكين أصحاب المهارات</h3>
+                        <p class="text-gray-600">توفير المعدات والأدوات اللازمة للحرفيين والمهنيين الذين يمتلكون المهارة وينقصهم رأس المال للبدء.</p>
+                    </div>
+
+                    <!-- Goal 4 -->
+                    <div class="glass-card rounded-2xl p-8 hover:-translate-y-2 transition-all duration-300 reveal group" style="transition-delay: 300ms;">
+                        <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">دعم ثقافة العمل والإنتاج</h3>
+                        <p class="text-gray-600">تحويل المجتمع تدريجياً من الاعتماد على التبرعات الاستهلاكية إلى تبني عقلية الإنتاج والعطاء.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works Section -->
+        <section id="how-it-works" class="py-24 bg-primary text-white relative overflow-hidden">
+            <!-- Background Decorations -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl transform -translate-y-1/2 translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-80 h-80 bg-accent/20 rounded-full blur-3xl transform translate-y-1/2 -translate-x-1/2"></div>
+            
+            <div class="container mx-auto px-4 md:px-8 relative z-10">
+                <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">كيف تعمل المبادرة؟</h2>
+                    <p class="text-primaryLight text-lg md:text-xl font-medium">خطوات بسيطة تفصلك عن تحقيق مشروعك</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-stretch relative">
+                    
+                    <!-- Step 1 -->
+                    <div class="step-item flex-1 text-center relative px-2 mb-12 md:mb-0 reveal">
+                        <div class="step-connector relative z-10 w-20 h-20 mx-auto bg-primaryLight/30 border-2 border-white/50 backdrop-blur-sm rounded-full flex items-center justify-center text-3xl mb-6 shadow-lg shadow-black/10">
+                            1
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-accent text-shadow-sm">تقديم الطلب</h4>
+                        <p class="text-white/80 text-sm md:text-base px-2">يتم تقديم الطلب عبر تعبئة استمارة الموقع بمعلوماتك وفكرة مشروعك.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-item flex-1 text-center relative px-2 mb-12 md:mb-0 reveal" style="transition-delay: 100ms;">
+                        <div class="step-connector relative z-10 w-20 h-20 mx-auto bg-primaryLight/30 border-2 border-white/50 backdrop-blur-sm rounded-full flex items-center justify-center text-3xl mb-6 shadow-lg shadow-black/10">
+                            2
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-accent">دراسة الحالة</h4>
+                        <p class="text-white/80 text-sm md:text-base px-2">يقوم فريقنا بمراجعة الطلبات ودراسة جدوى الفكرة ومدى استحقاق المتقدم.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-item flex-1 text-center relative px-2 mb-12 md:mb-0 reveal" style="transition-delay: 200ms;">
+                        <div class="step-connector relative z-10 w-20 h-20 mx-auto bg-white border-2 border-accent text-primary rounded-full flex items-center justify-center text-3xl mb-6 shadow-lg shadow-black/10 transform scale-110">
+                            3
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-white">اختيار المستفيدين</h4>
+                        <p class="text-white/80 text-sm md:text-base px-2">يتم اختيار المشاريع المطابقة للمعايير وتخصيص الدعم المتاح لها.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-item flex-1 text-center relative px-2 mb-12 md:mb-0 reveal" style="transition-delay: 300ms;">
+                        <div class="step-connector relative z-10 w-20 h-20 mx-auto bg-primaryLight/30 border-2 border-white/50 backdrop-blur-sm rounded-full flex items-center justify-center text-3xl mb-6 shadow-lg shadow-black/10">
+                            4
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-accent">تنفيذ المشروع</h4>
+                        <p class="text-white/80 text-sm md:text-base px-2">شراء المعدات والمواد المطلوبة وتدريب المستفيد إذا لزم الأمر، وإطلاق المشروع.</p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="step-item flex-1 text-center relative px-2 mb-0 md:mb-0 reveal" style="transition-delay: 400ms;">
+                        <div class="step-connector relative z-10 w-20 h-20 mx-auto bg-primaryLight/30 border-2 border-white/50 backdrop-blur-sm rounded-full flex items-center justify-center text-3xl mb-6 shadow-lg shadow-black/10">
+                            5
+                        </div>
+                        <h4 class="text-xl font-bold mb-3 text-accent">المتابعة والتقييم</h4>
+                        <p class="text-white/80 text-sm md:text-base px-2">متابعة دورية للمشروع للتأكد من نجاحه واستمراريته وحل العوائق.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Who Can Apply Section -->
+        <section class="py-24 bg-gray-50">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="flex flex-col lg:flex-row gap-12 items-center bg-white rounded-3xl overflow-hidden shadow-xl reveal">
+                    <div class="w-full lg:w-1/2 p-10 lg:p-16">
+                        <span class="text-accent font-bold text-lg mb-2 block">الفئات المستهدفة</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">من يمكنه التقديم؟</h2>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1 text-xl"></i>
+                                <span class="text-gray-700 text-lg">أصحاب الحرف اليدوية والمهن البسيطة الذين ينقصهم رأس المال لبدء العمل.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1 text-xl"></i>
+                                <span class="text-gray-700 text-lg">الأرامل والمطلقات وأمهات الأيتام الراغبات في تأسيس مشروع منزلي لدعم أسرهن.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1 text-xl"></i>
+                                <span class="text-gray-700 text-lg">الشباب العاطلون عن العمل الذين لديهم أفكار لمشاريع إنتاجية صغيرة ومستدامة.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-primary mt-1 text-xl"></i>
+                                <span class="text-gray-700 text-lg">أرباب الأسر من ذوي الدخل المحدود الراغبين في مصدر دخل إضافي.</span>
+                            </li>
+                        </ul>
+
+                        <a href="register.html" class="inline-block px-8 py-3 bg-primary hover:bg-primaryDark text-white font-medium rounded-xl shadow-lg hover:shadow-primary/30 transition-all-300">
+                            سجل الآن
+                        </a>
+                    </div>
+                    <div class="w-full lg:w-1/2 h-full min-h-[400px]">
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=800" alt="سيدة تعمل في الحياكة" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-accent text-gray-900 relative text-center px-4">
+            <div class="container mx-auto max-w-4xl relative z-10 reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6">هل أنت مستعد لبدء مشروعك؟</h2>
+                <p class="text-xl mb-10 text-gray-800 font-medium">خطوة واحدة تفصلك عن تغيير مسار حياتك، مبادرة نواة هنا لدعمك وتوجيهك.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="register.html" class="px-10 py-4 bg-gray-900 hover:bg-black text-white font-bold rounded-full shadow-xl transition-all-300 transform hover:-translate-y-1 text-lg">
+                        استمارة التسجيل
+                    </a>
+                    <a href="donate.html" class="px-10 py-4 bg-white hover:bg-gray-100 text-gray-900 font-bold rounded-full shadow-xl transition-all-300 text-lg border-2 border-transparent">
+                        تبرع لدعم مشروع
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-primary">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <a href="index.html" class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-accent">
+                            <i class="fa-solid fa-leaf text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold font-sans text-white">مبادرة نواة</span>
+                    </a>
+                    <p class="text-gray-400 mb-6 text-sm leading-relaxed">
+                        مبادرة اجتماعية تهدف إلى تمكين الأفراد من خلال توفير الدعم للمشاريع الصغيرة، والانتقال من الاعتماد على المعونات إلى التمكين الاقتصادي المستدام.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white border-b border-gray-700 pb-2 inline-block">روابط سريعة</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-accent transition-colors">الرئيسية</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-accent transition-colors">عن المبادرة</a></li>
+                        <li><a href="index.html#how-it-works" class="text-gray-400 hover:text-accent transition-colors">كيف تعمل</a></li>
+                        <li><a href="donate.html" class="text-gray-400 hover:text-accent transition-colors">تبرع لدعم المستفيدين</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white border-b border-gray-700 pb-2 inline-block">تواصل معنا</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-accent mt-1"></i>
+                            <span class="text-gray-400">info@nawainitiative.ly</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-accent mt-1"></i>
+                            <span class="text-gray-400 mr-1" dir="ltr">+218 XX XXX XXXX</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-accent mt-1"></i>
+                            <span class="text-gray-400">ليبيا - مقر المبادرة الرئيسي</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white border-b border-gray-700 pb-2 inline-block">تابعنا</h3>
+                    <p class="text-gray-400 mb-4 text-sm">كن على اطلاع بآخر أخبار المبادرة والمشاريع المدعومة.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all-300">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all-300">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all-300">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all-300">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2026 مبادرة نواة. جميع الحقوق محفوظة.
+                </p>
+                <p class="text-gray-600 text-sm">
+                    نموذج أولي ثابت - Static Prototype
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
