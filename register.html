@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استمارة تسجيل مبادرة نواة</title>
+    <title>التسجيل قريباً – مبادرة نواة</title>
+    <meta name="description" content="سيُفتح باب التسجيل للاستفادة من مبادرة نواة قريباً – ابقَ على اطلاع">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,6 +15,7 @@
                     colors: {
                         primary: '#2E7D32',
                         primaryDark: '#1b5e20',
+                        primaryLight: '#4caf50',
                         accent: '#FFB300',
                         accentHover: '#ffa000',
                         bgBase: '#F5F5F5',
@@ -81,262 +83,75 @@
         </div>
     </header>
 
-    <main class="flex-grow pt-28 pb-20">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <main class="flex-grow pt-20 flex items-center justify-center">
 
-            <div class="text-center mb-10 reveal">
-                <h1 class="text-3xl md:text-5xl font-extrabold text-primary mb-4 drop-shadow-sm">استمارة تسجيل مبادرة
-                    نواة</h1>
-                <p class="text-gray-600 text-lg">نحن هنا لدعمك. املأ البيانات التالية لنتمكن من دراسة فكرتك ودعمها بأفضل
-                    طريقة ممكنة.</p>
+        <!-- Coming Soon Section -->
+        <section class="w-full relative overflow-hidden">
+
+            <!-- Background gradient -->
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-white to-accent/5 z-0"></div>
+            <!-- Decorative blobs -->
+            <div class="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 z-0"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 z-0"></div>
+
+            <div class="container mx-auto px-4 py-24 relative z-10 max-w-3xl text-center">
+
+                <!-- Icon -->
+                <div class="w-28 h-28 bg-white rounded-3xl shadow-2xl flex items-center justify-center mx-auto mb-8 border-4 border-primary/10 reveal">
+                    <i class="fa-solid fa-hourglass-half text-5xl text-primary"></i>
+                </div>
+
+                <!-- Launch Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-sm mb-6 reveal">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    تم إطلاق المبادرة – مارس 2026
+                </div>
+
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 reveal">
+                    التسجيل <span class="text-primary">قريباً</span>
+                </h1>
+
+                <p class="text-xl text-gray-600 leading-relaxed mb-4 reveal">
+                    تم إطلاق مبادرة نواة رسمياً، وسيُفتح باب التسجيل للراغبين في الاستفادة من المبادرة قريباً.
+                </p>
+                <p class="text-lg text-gray-500 leading-relaxed mb-10 reveal">
+                    نعمل حالياً على تهيئة منظومة التسجيل الإلكتروني لضمان أفضل تجربة ممكنة للمتقدمين. تابع الموقع للإعلان عن موعد فتح الباب.
+                </p>
+
+                <!-- Info Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 reveal">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center">
+                        <i class="fa-solid fa-users text-3xl text-primary mb-3"></i>
+                        <h3 class="font-bold text-gray-800 mb-1">للشباب والأسر</h3>
+                        <p class="text-gray-500 text-sm">أصحاب المهارات والحرف وأرباب الأسر محدودي الدخل</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center">
+                        <i class="fa-solid fa-file-alt text-3xl text-accent mb-3"></i>
+                        <h3 class="font-bold text-gray-800 mb-1">استمارة إلكترونية</h3>
+                        <p class="text-gray-500 text-sm">التسجيل سيتم عبر الموقع – بدون زيارة مكتبية</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center">
+                        <i class="fa-solid fa-check-circle text-3xl text-green-500 mb-3"></i>
+                        <h3 class="font-bold text-gray-800 mb-1">مجاني تماماً</h3>
+                        <p class="text-gray-500 text-sm">التقديم مجاني ولا يلزم أي رسوم أو تعهد</p>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
+                    <a href="donate.html"
+                        class="px-8 py-4 bg-primary hover:bg-primaryDark text-white font-bold rounded-xl shadow-xl hover:shadow-primary/30 transition-all-300 transform hover:-translate-y-1 text-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-heart"></i> ادعم المبادرة الآن
+                    </a>
+                    <a href="about.html"
+                        class="px-8 py-4 bg-white hover:bg-gray-50 text-gray-800 font-bold rounded-xl shadow-md border border-gray-200 transition-all-300 text-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-circle-info text-primary"></i> تعرف على المبادرة
+                    </a>
+                </div>
+
             </div>
+        </section>
 
-            <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden reveal">
-
-                <div class="h-2 bg-gradient-to-l from-primary via-primaryLight to-accent w-full"></div>
-
-                <form class="p-8 md:p-12" action="#" method="POST"
-                    onsubmit="event.preventDefault(); alert('تم استلام النموذج بنجاح (نموذج أولي)'); window.location.href='index.html';">
-
-                    <!-- 1. Personal Data -->
-                    <div class="mb-12">
-                        <div class="flex items-center gap-3 mb-6 border-b border-gray-100 pb-3">
-                            <i class="fa-solid fa-user text-accent text-xl"></i>
-                            <h2 class="text-2xl font-bold text-gray-800">البيانات الشخصية</h2>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="fullName">الاسم الكامل <span
-                                        class="text-red-500">*</span></label>
-                                <input type="text" id="fullName" required
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-gray-50 focus:bg-white outline-none"
-                                    placeholder="الاسم الرباعي">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="nationalId">الرقم الوطني /
-                                    الهوية <span class="text-red-500">*</span></label>
-                                <input type="text" id="nationalId" required
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-gray-50 focus:bg-white outline-none"
-                                    placeholder="12 رقم وطني">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="dob">تاريخ الميلاد <span
-                                        class="text-red-500">*</span></label>
-                                <input type="date" id="dob" required
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-gray-50 focus:bg-white outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="address">مكان السكن / العنوان
-                                    <span class="text-red-500">*</span></label>
-                                <input type="text" id="address" required
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-gray-50 focus:bg-white outline-none"
-                                    placeholder="المدينة، المنطقة، أقرب نقطة دالة">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 2. Social Status -->
-                    <div class="mb-12">
-                        <div class="flex items-center gap-3 mb-6 border-b border-gray-100 pb-3">
-                            <i class="fa-solid fa-users text-accent text-xl"></i>
-                            <h2 class="text-2xl font-bold text-gray-800">الحالة الاجتماعية</h2>
-                        </div>
-                        <div class="flex flex-wrap gap-6">
-                            <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="radio" name="socialStatus" value="أعزب"
-                                    class="w-5 h-5 text-primary focus:ring-primary cursor-pointer border-gray-300">
-                                <span
-                                    class="text-gray-700 font-medium group-hover:text-primary transition-colors">أعزب</span>
-                            </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="radio" name="socialStatus" value="متزوج"
-                                    class="w-5 h-5 text-primary focus:ring-primary cursor-pointer border-gray-300">
-                                <span
-                                    class="text-gray-700 font-medium group-hover:text-primary transition-colors">متزوج</span>
-                            </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="radio" name="socialStatus" value="أرمل"
-                                    class="w-5 h-5 text-primary focus:ring-primary cursor-pointer border-gray-300">
-                                <span
-                                    class="text-gray-700 font-medium group-hover:text-primary transition-colors">أرمل</span>
-                            </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="radio" name="socialStatus" value="مطلق"
-                                    class="w-5 h-5 text-primary focus:ring-primary cursor-pointer border-gray-300">
-                                <span
-                                    class="text-gray-700 font-medium group-hover:text-primary transition-colors">مطلق</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- 3. Work and Craft -->
-                    <div class="mb-12">
-                        <div class="flex items-center gap-3 mb-6 border-b border-gray-100 pb-3">
-                            <i class="fa-solid fa-briefcase text-accent text-xl"></i>
-                            <h2 class="text-2xl font-bold text-gray-800">العمل والحرفة</h2>
-                        </div>
-
-                        <div class="mb-6">
-                            <p class="block text-gray-700 font-semibold mb-3">هل لديك عمل حالياً؟</p>
-                            <div class="flex gap-6">
-                                <label class="flex items-center gap-3 cursor-pointer group">
-                                    <input type="radio" name="hasJob" value="نعم"
-                                        class="w-5 h-5 text-primary focus:ring-primary cursor-pointer border-gray-300">
-                                    <span
-                                        class="text-gray-700 font-medium group-hover:text-primary transition-colors">نعم</span>
-                                </label>
-                                <label class="flex items-center gap-3 cursor-pointer group">
-                                    <input type="radio" name="hasJob" value="لا"
-                                        class="w-5 h-5 text-primary focus:ring-primary cursor-pointer border-gray-300">
-                                    <span
-                                        class="text-gray-700 font-medium group-hover:text-primary transition-colors">لا</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="jobType">نوع العمل أو الوظيفة
-                                    (إن وجد)</label>
-                                <input type="text" id="jobType"
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-gray-50 focus:bg-white outline-none"
-                                    placeholder="الوظيفة الحالية">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="craftType">الحرفة أو النشاط
-                                    الذي تمارسه أو تفكر فيه <span class="text-red-500">*</span></label>
-                                <input type="text" id="craftType" required
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-gray-50 focus:bg-white outline-none"
-                                    placeholder="مثال: خياطة، صيانة هواتف، نجارة...">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 4. Project Idea -->
-                    <div class="mb-12">
-                        <div class="flex items-center gap-3 mb-6 border-b border-gray-100 pb-3">
-                            <i class="fa-solid fa-lightbulb text-accent text-xl"></i>
-                            <h2 class="text-2xl font-bold text-gray-800">فكرة المشروع</h2>
-                        </div>
-
-                        <div class="grid grid-cols-1 gap-6 mb-6">
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="projectName">اسم المشروع
-                                    المبدئي <span class="text-red-500">*</span></label>
-                                <input type="text" id="projectName" required
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-gray-50 focus:bg-white outline-none"
-                                    placeholder="ماذا تود أن تطلق على مشروعك؟">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="projectDesc">وصف مختصر للفكرة
-                                    <span class="text-red-500">*</span></label>
-                                <textarea id="projectDesc" rows="4" required
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-gray-50 focus:bg-white outline-none"
-                                    placeholder="اشرح فكرة مشروعك، وما هو المنتج أو الخدمة التي ستقدمها وكيف ترى نجاحه..."></textarea>
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="requirements">المواد أو
-                                    المعدات المطلوبة <span class="text-red-500">*</span></label>
-                                <textarea id="requirements" rows="3" required
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-gray-50 focus:bg-white outline-none"
-                                    placeholder="أذكر أهم المواد والآلات التي تنقصك لبدء العمل..."></textarea>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <p class="block text-gray-700 font-semibold mb-3">هل لديك خبرة سابقة؟</p>
-                                <div class="flex gap-6 mt-2">
-                                    <label class="flex items-center gap-3 cursor-pointer group">
-                                        <input type="radio" name="hasExp" value="نعم"
-                                            class="w-5 h-5 text-primary focus:ring-primary cursor-pointer border-gray-300">
-                                        <span
-                                            class="text-gray-700 font-medium group-hover:text-primary transition-colors">نعم</span>
-                                    </label>
-                                    <label class="flex items-center gap-3 cursor-pointer group">
-                                        <input type="radio" name="hasExp" value="لا"
-                                            class="w-5 h-5 text-primary focus:ring-primary cursor-pointer border-gray-300">
-                                        <span
-                                            class="text-gray-700 font-medium group-hover:text-primary transition-colors">لا</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2" for="trainingDuration">مدة التدريب
-                                    أو الدعم المطلوب</label>
-                                <input type="text" id="trainingDuration"
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-gray-50 focus:bg-white outline-none"
-                                    placeholder="مثال: شهر تدريب مهني، أو أسبوع توجيه">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 5. Support Needed -->
-                    <div class="mb-10">
-                        <div class="flex items-center gap-3 mb-6 border-b border-gray-100 pb-3">
-                            <i class="fa-solid fa-handshake-angle text-accent text-xl"></i>
-                            <h2 class="text-2xl font-bold text-gray-800">نوع الدعم المطلوب</h2>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                            <label
-                                class="flex items-center gap-3 p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-green-50/50 transition-all-300 group">
-                                <input type="checkbox" name="supportType" value="تمويل لشراء المعدات"
-                                    class="w-5 h-5 text-primary focus:ring-primary rounded border-gray-300">
-                                <span class="text-gray-700 font-medium group-hover:text-primary">تمويل لشراء
-                                    المعدات</span>
-                            </label>
-                            <label
-                                class="flex items-center gap-3 p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-green-50/50 transition-all-300 group">
-                                <input type="checkbox" name="supportType" value="تدريب أو توجيه مهني"
-                                    class="w-5 h-5 text-primary focus:ring-primary rounded border-gray-300">
-                                <span class="text-gray-700 font-medium group-hover:text-primary">تدريب أو توجيه
-                                    مهني</span>
-                            </label>
-                            <label
-                                class="flex items-center gap-3 p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-green-50/50 transition-all-300 group">
-                                <input type="checkbox" name="supportType" value="معدات أو أدوات للعمل"
-                                    class="w-5 h-5 text-primary focus:ring-primary rounded border-gray-300">
-                                <span class="text-gray-700 font-medium group-hover:text-primary">معدات أو أدوات
-                                    للعمل</span>
-                            </label>
-                            <label
-                                class="flex items-center gap-3 p-4 border border-gray-200 rounded-xl cursor-pointer hover:border-primary hover:bg-green-50/50 transition-all-300 group">
-                                <input type="checkbox" name="supportType" value="تسويق أو بيع المنتج"
-                                    class="w-5 h-5 text-primary focus:ring-primary rounded border-gray-300">
-                                <span class="text-gray-700 font-medium group-hover:text-primary">تسويق أو بيع
-                                    المنتج</span>
-                            </label>
-                        </div>
-
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2" for="additionalNotes">ملاحظات أخرى
-                                (اختياري)</label>
-                            <textarea id="additionalNotes" rows="3"
-                                class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-gray-50 focus:bg-white outline-none"
-                                placeholder="أضف أي تفاصيل أخرى تود إعلامنا بها..."></textarea>
-                        </div>
-                    </div>
-
-                    <!-- Submit Footer Note -->
-                    <div class="bg-gray-50 p-6 rounded-2xl mb-8 border border-gray-100 flex gap-4 items-start">
-                        <i class="fa-solid fa-circle-info text-primary text-2xl mt-1"></i>
-                        <p class="text-gray-600 font-medium text-lg leading-relaxed">
-                            هذه الاستمارة لجمع معلومات المشاركين في مبادرة نواة، ولن تتطلب توقيعاً أو تعهداً. المعلومات
-                            المحفوظة سرية تماماً، وتستخدم لغرض التقييم فقط.
-                        </p>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="text-center">
-                        <button type="submit"
-                            class="w-full md:w-auto px-12 py-4 bg-primary hover:bg-primaryDark text-white font-bold rounded-xl shadow-xl hover:shadow-primary/30 transition-all-300 transform hover:-translate-y-1 text-lg flex items-center justify-center gap-3 mx-auto">
-                            إرسال الطلب <i class="fa-solid fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
     </main>
 
     <!-- Footer Section -->
@@ -381,12 +196,8 @@
                             <span class="text-gray-400">info@nawainitiative.ly</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-phone text-accent mt-1"></i>
-                            <span class="text-gray-400 mr-1" dir="ltr">+218 XX XXX XXXX</span>
-                        </li>
-                        <li class="flex items-start gap-3">
                             <i class="fa-solid fa-location-dot text-accent mt-1"></i>
-                            <span class="text-gray-400">ليبيا - مقر المبادرة الرئيسي</span>
+                            <span class="text-gray-400">ليبيا</span>
                         </li>
                     </ul>
                 </div>
@@ -407,22 +218,17 @@
                             class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all-300">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all-300">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
                     </div>
                 </div>
 
             </div>
 
-            <div
-                class="pt-8 border-t border-gray-800 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="pt-8 border-t border-gray-800 text-center flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-gray-500 text-sm">
                     &copy; 2026 مبادرة نواة. جميع الحقوق محفوظة.
                 </p>
                 <p class="text-gray-600 text-sm">
-                    نموذج أولي ثابت - Static Prototype
+                    أُطلقت المبادرة رسمياً – مارس 2026
                 </p>
             </div>
         </div>
