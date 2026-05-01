@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('active');
         });
     }
 
@@ -82,8 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!canvas) return;
         
         const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        
+        const resizeCanvas = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        };
+        
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
         
         let pieces = [];
         const numberOfPieces = 200;
@@ -93,10 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
             if (pieces.length < numberOfPieces) {
+                const isMobile = window.innerWidth < 768;
                 pieces.push({
                     x: Math.random() * canvas.width,
                     y: -20,
-                    size: Math.random() * 10 + 5,
+                    size: Math.random() * (isMobile ? 5 : 10) + (isMobile ? 3 : 5),
                     color: colors[Math.floor(Math.random() * colors.length)],
                     speed: Math.random() * 3 + 2,
                     rotation: Math.random() * 360,
@@ -133,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Play a subtle sound or other effect here if desired
                 observer.unobserve(projectSection);
             }
-        }, { threshold: 0.5 });
+        }, { threshold: 0.2 }); // Lower threshold for mobile
         observer.observe(projectSection);
     }
 });
