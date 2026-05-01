@@ -75,4 +75,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
         counters.forEach(counter => counterObserver.observe(counter));
     }
+
+    // ===== Confetti Celebration =====
+    function startConfetti() {
+        const canvas = document.getElementById('confetti-canvas');
+        if (!canvas) return;
+        
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        let pieces = [];
+        const numberOfPieces = 200;
+        const colors = ['#2E7D32', '#FFB300', '#4caf50', '#ffffff', '#1b5e20'];
+        
+        function update() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            if (pieces.length < numberOfPieces) {
+                pieces.push({
+                    x: Math.random() * canvas.width,
+                    y: -20,
+                    size: Math.random() * 10 + 5,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speed: Math.random() * 3 + 2,
+                    rotation: Math.random() * 360,
+                    rotationSpeed: Math.random() * 10 - 5
+                });
+            }
+            
+            pieces.forEach((p, i) => {
+                p.y += p.speed;
+                p.rotation += p.rotationSpeed;
+                
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.rotation * Math.PI / 180);
+                ctx.fillStyle = p.color;
+                ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+                ctx.restore();
+                
+                if (p.y > canvas.height) pieces.splice(i, 1);
+            });
+            
+            if (pieces.length > 0) requestAnimationFrame(update);
+        }
+        
+        update();
+    }
+
+    // Trigger confetti when the live projects section comes into view
+    const projectSection = document.getElementById('live-projects');
+    if (projectSection) {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                startConfetti();
+                // Play a subtle sound or other effect here if desired
+                observer.unobserve(projectSection);
+            }
+        }, { threshold: 0.5 });
+        observer.observe(projectSection);
+    }
 });
