@@ -31,6 +31,7 @@
 
 <body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
 
+
     <!-- Header Navigation -->
     <header class="fixed w-full top-0 z-50 glass transition-all-300">
         <div class="container mx-auto px-4 md:px-8">
@@ -108,7 +109,7 @@
                         <p class="text-sm text-gray-200">مشروع تم تمويله </p>
                     </div>
                     <div>
-                        <p class="text-3xl font-bold text-accent mb-1">7</p>
+                        <p class="text-3xl font-bold text-accent mb-1">10</p>
                         <p class="text-sm text-gray-200">أفراد مستفيدين</p>
                     </div>
                     <div>
@@ -124,7 +125,7 @@
         </section>
 
         <!-- Bank Transfer Info Section -->
-        <section class="container mx-auto px-4 md:px-8 max-w-4xl">
+        <section id="live-projects" class="container mx-auto px-4 md:px-8 max-w-4xl">
 
             <!-- Coming Soon Payment Notice -->
             <div class="flex items-start gap-4 bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-10 reveal">
@@ -163,7 +164,12 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/20">
                             <p class="text-white/60 text-sm mb-1"><i class="fa-solid fa-hashtag ml-1"></i> رقم الحساب</p>
-                            <p class="text-2xl font-extrabold tracking-widest text-accent" dir="ltr">0017298852001</p>
+                            <div class="flex items-center justify-between gap-2">
+                                <p id="account-number" class="text-2xl font-extrabold tracking-widest text-accent" dir="ltr">0017298852001</p>
+                                <button onclick="copyToClipboard('0017298852001', this)" class="text-white/50 hover:text-accent transition-colors p-2 rounded-lg hover:bg-white/10" title="نسخ رقم الحساب">
+                                    <i class="fa-solid fa-copy text-xl"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-5 border border-white/20">
                             <p class="text-white/60 text-sm mb-1"><i class="fa-solid fa-user ml-1"></i> اسم المستفيد</p>
@@ -176,14 +182,87 @@
                         <p class="font-bold text-accent mb-3"><i class="fa-solid fa-circle-info ml-2"></i> خطوات التبرع</p>
                         <ol class="space-y-2 text-white/80 text-sm list-none">
                             <li class="flex items-start gap-2"><span class="w-5 h-5 bg-accent text-gray-900 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span> توجه لمصرف التجارة والتنمية أو استخدم تطبيق المصرف.</li>
-                            <li class="flex items-start gap-2"><span class="w-5 h-5 bg-accent text-gray-900 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span> حوّل المبلغ الذي تختاره للحساب رقم <strong dir="ltr" class="text-white">0017298852001</strong>.</li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-5 h-5 bg-accent text-gray-900 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span> 
+                                <div class="flex items-center gap-2">
+                                    <span>حوّل المبلغ الذي تختاره للحساب رقم <strong dir="ltr" class="text-white">0017298852001</strong></span>
+                                    <button onclick="copyToClipboard('0017298852001', this)" class="text-accent hover:text-white transition-colors" title="نسخ">
+                                        <i class="fa-solid fa-copy text-xs"></i>
+                                    </button>
+                                </div>
+                            </li>
                             <li class="flex items-start gap-2"><span class="w-5 h-5 bg-accent text-gray-900 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span> احتفظ بإيصال التحويل وأرسل صورة منه عبر التواصل الاجتماعي أو البريد الإلكتروني للتوثيق.</li>
                         </ol>
                     </div>
                 </div>
             </div>
 
-            <!-- Project: مقهى تيك أواي -->
+            <!-- Project 2: معمل حلويات (New) -->
+            <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden mb-10 reveal">
+                <div class="h-1.5 bg-accent"></div>
+                <div class="p-6 md:p-8">
+                    <!-- Header -->
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-2xl text-accent flex-shrink-0">
+                                <i class="fa-solid fa-cookie-bite"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-accent bg-amber-50 px-2 py-0.5 rounded-md">المشروع الثاني</span>
+                                <h3 class="text-xl font-extrabold text-gray-800">توفير معدات معمل حلويات منزلية</h3>
+                            </div>
+                        </div>
+                        <span class="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-bold text-accent bg-accent/10 rounded-full">
+                            <span class="w-2 h-2 bg-accent rounded-full"></span>
+                            يحتاج تمويلاً
+                        </span>
+                    </div>
+
+                    <!-- Info Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-gray-50 rounded-2xl p-4 text-center">
+                            <i class="fa-solid fa-people-group text-primary text-xl mb-1"></i>
+                            <p class="text-2xl font-extrabold text-primary">3</p>
+                            <p class="text-gray-500 text-xs">مستفيدين</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-2xl p-4 text-center">
+                            <i class="fa-solid fa-home text-accent text-xl mb-1"></i>
+                            <p class="text-lg font-extrabold text-accent">مشروع</p>
+                            <p class="text-gray-500 text-xs">منزلي</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-2xl p-4 text-center">
+                            <i class="fa-solid fa-chart-pie text-gray-400 text-xl mb-1"></i>
+                            <p class="text-2xl font-extrabold text-gray-400">0%</p>
+                            <p class="text-gray-500 text-xs">تم تمويله</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-2xl p-4 text-center">
+                            <i class="fa-solid fa-location-dot text-primary text-xl mb-1"></i>
+                            <p class="text-lg font-extrabold text-gray-700">ليبيا</p>
+                            <p class="text-gray-500 text-xs">الموقع</p>
+                        </div>
+                    </div>
+
+                    <!-- Progress bar -->
+                    <div class="mb-4">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="font-bold text-gray-700">التمويل المُجمَّع</span>
+                            <span class="font-extrabold text-accent">0% <span class="text-gray-400 font-normal">/ المبلغ المطلوب</span></span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                            <div class="bg-accent h-3 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-600 text-sm mb-5 leading-relaxed">
+                        نستهدف توفير معدات صناعة الحلويات لسيدة ليبية تسعى لتأمين قوتها واستقلالها المالي بكرامة. دعمكم يحول الفكرة لواقع.
+                    </p>
+
+                    <!-- CTA -->
+                    <p class="text-center text-xs text-gray-400 mb-3">حوّل تبرعك للحساب أعلاه مع الإشارة إلى "معمل الحلويات"</p>
+                </div>
+            </div>
+
+            <!-- Project 1: مقهى (Completed) -->
             <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden mb-10 reveal">
                 <div class="h-1.5 bg-gradient-to-l from-accent via-primary to-primaryDark"></div>
                 <div class="p-6 md:p-8">
@@ -198,9 +277,9 @@
                                 <h3 class="text-xl font-extrabold text-gray-800">مقهى تيك أواي</h3>
                             </div>
                         </div>
-                        <span class="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-bold text-primary bg-primary/10 rounded-full">
-                            <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-                            يحتاج تمويلاً
+                        <span class="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-bold text-green-600 bg-green-50 rounded-full">
+                            <i class="fa-solid fa-circle-check"></i>
+                            تم تمويله بنجاح
                         </span>
                     </div>
 
@@ -301,11 +380,11 @@
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-envelope text-accent mt-1"></i>
-                            <span class="text-gray-400">info@nawainitiative.ly</span>
+                            <span class="text-gray-400">info@nawa.com.ly</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-phone text-accent mt-1"></i>
-                            <span class="text-gray-400 mr-1" dir="ltr">+218 XX XXX XXXX</span>
+                            <span class="text-gray-400 mr-1" dir="ltr">0920054070</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-location-dot text-accent mt-1"></i>

@@ -131,16 +131,37 @@ document.addEventListener('DOMContentLoaded', () => {
         update();
     }
 
-    // Trigger confetti when the live projects section comes into view
+    // Trigger confetti when the live projects section comes into view (Disabled by user request)
+    /*
     const projectSection = document.getElementById('live-projects');
     if (projectSection) {
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 startConfetti();
-                // Play a subtle sound or other effect here if desired
                 observer.unobserve(projectSection);
             }
-        }, { threshold: 0.2 }); // Lower threshold for mobile
+        }, { threshold: 0.2 });
         observer.observe(projectSection);
     }
+    */
 });
+
+// Copy to clipboard functionality
+function copyToClipboard(text, button) {
+    navigator.clipboard.writeText(text).then(() => {
+        // Change icon to checkmark
+        const icon = button.querySelector('i');
+        const originalClass = icon.className;
+        icon.className = 'fa-solid fa-check text-green-400';
+        
+        // Show a brief feedback (optional, since the icon changes)
+        // button.title = "تم النسخ!";
+        
+        setTimeout(() => {
+            icon.className = originalClass;
+            // button.title = "نسخ رقم الحساب";
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
