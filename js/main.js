@@ -165,3 +165,24 @@ function copyToClipboard(text, button) {
         console.error('Failed to copy: ', err);
     });
 }
+
+// Feasibility Study Modal Control
+function showStudyModal() {
+    const modal = document.getElementById('study-modal');
+    const content = document.getElementById('study-modal-content');
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+        content.classList.remove('scale-95');
+        content.classList.add('scale-100');
+    }, 10);
+}
+
+function closeStudyModal() {
+    const modal = document.getElementById('study-modal');
+    const content = document.getElementById('study-modal-content');
+    content.classList.remove('scale-100');
+    content.classList.add('scale-95');
+    setTimeout(() => {
+        modal.classList.add('hidden');
+    }, 200);
+}
