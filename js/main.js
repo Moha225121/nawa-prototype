@@ -186,3 +186,24 @@ function closeStudyModal() {
         modal.classList.add('hidden');
     }, 200);
 }
+
+// Project 1 Study Modal Control
+function showProject1StudyModal() {
+    const modal = document.getElementById('project-1-study-modal');
+    const content = document.getElementById('project-1-study-content');
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+        content.classList.remove('scale-95');
+        content.classList.add('scale-100');
+    }, 10);
+}
+
+function closeProject1StudyModal() {
+    const modal = document.getElementById('project-1-study-modal');
+    const content = document.getElementById('project-1-study-content');
+    content.classList.remove('scale-100');
+    content.classList.add('scale-95');
+    setTimeout(() => {
+        modal.classList.add('hidden');
+    }, 200);
+}

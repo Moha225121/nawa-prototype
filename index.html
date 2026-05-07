@@ -356,6 +356,10 @@
                                     <div class="w-full bg-gray-100 rounded-full h-3 overflow-hidden mb-6">
                                         <div class="bg-primary h-3 rounded-full" style="width: 100%"></div>
                                     </div>
+                                    <button onclick="showProject1StudyModal()" class="w-full mb-3 flex items-center justify-center gap-3 py-3 border-2 border-primary text-primary hover:bg-primary/5 font-bold rounded-2xl transition-all-300">
+                                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                                        عرض دراسة الجدوى
+                                    </button>
                                     <div class="w-full flex items-center justify-center gap-3 py-3 bg-gray-100 text-gray-400 font-bold rounded-2xl cursor-not-allowed">
                                         <i class="fa-solid fa-check-double"></i>
                                         تم تحقيق الهدف
@@ -586,6 +590,50 @@
                 <button onclick="closeStudyModal()" class="w-full py-4 bg-primary text-white font-bold rounded-2xl shadow-lg hover:bg-primaryDark transition-all-300">
                     موافق، سأنتظر
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 1 Feasibility Study Modal (Real Data) -->
+    <div id="project-1-study-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center px-4">
+        <div class="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" onclick="closeProject1StudyModal()"></div>
+        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full relative z-10 shadow-2xl scale-95 transition-transform duration-300" id="project-1-study-content">
+            <div class="text-right">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">دراسة الجدوى - مقهى تيك أواي</h3>
+                    <button onclick="closeProject1StudyModal()" class="text-gray-400 hover:text-gray-600"><i class="fa-solid fa-xmark text-2xl"></i></button>
+                </div>
+                
+                <div class="space-y-4 mb-8">
+                    <div class="flex justify-between items-center p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                        <span class="text-gray-600">رسوم التسجيل والتراخيص</span>
+                        <span class="font-bold text-gray-800">2,000 د.ل</span>
+                    </div>
+                    <div class="flex justify-between items-center p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                        <span class="text-gray-600">تجهيز الموقع والديكور</span>
+                        <span class="font-bold text-gray-800">6,000 د.ل</span>
+                    </div>
+                    <div class="flex justify-between items-center p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                        <span class="text-gray-600">الأجهزة والمعدات</span>
+                        <span class="font-bold text-gray-800">25,000 د.ل</span>
+                    </div>
+                    <div class="flex justify-between items-center p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                        <span class="text-gray-600">المخزون الأولي</span>
+                        <span class="font-bold text-gray-800">4,000 د.ل</span>
+                    </div>
+                    <div class="flex justify-between items-center p-4 bg-primary/5 rounded-2xl border border-primary/10">
+                        <span class="text-primary font-bold">رأس المال التشغيلي</span>
+                        <span class="font-bold text-primary">6,000 د.ل</span>
+                    </div>
+                    <div class="flex justify-between items-center p-5 bg-primary text-white rounded-2xl shadow-lg">
+                        <span class="font-bold text-lg">إجمالي التمويل المطلوب</span>
+                        <span class="font-extrabold text-2xl">43,000 د.ل</span>
+                    </div>
+                </div>
+
+                <p class="text-xs text-gray-400 text-center leading-relaxed">
+                    * تم تدقيق هذه البيانات واعتمادها من قبل اللجنة المالية للمبادرة لضمان نجاح المشروع واستدامته.
+                </p>
             </div>
         </div>
     </div>
